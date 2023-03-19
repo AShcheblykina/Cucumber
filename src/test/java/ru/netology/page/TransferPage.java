@@ -16,7 +16,7 @@ public class TransferPage {
         transfer.shouldBe(visible);
     }
 
-    public DashboardPage makeReplenishment(String amountToTransfer, String cardNumber) {
+    public DashboardPage makeTransfer(String amountToTransfer, String cardNumber) {
         amount.setValue(amountToTransfer);
         card.setValue(cardNumber);
         transfer.click();
