@@ -14,18 +14,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TemplateSteps {
    private DashboardPage dashboardPage;
 
- @Пусть("пользователь залогинен с именем {string} и паролем {string}")
+ @Пусть("Пусть пользователь залогинен с именем {string} и паролем {string}")
   public  void authorization(String login, String password) {
   var loginPage =   open("http://localhost:9999", LoginPage.class);
   var verificationPage = loginPage.validLogin(login,password);
   dashboardPage = verificationPage.validVerify(String.valueOf(DataHelper.getVerificationCode()));
  }
- @Когда("он переводит {string} pублей с карты с номером {string} на свою {int} карту с главной страницы")
+ @Когда("Когда он переводит {string} pублей с карты с номером {string} на свою {int} карту с главной страницы")
   public void makeTransfer(String amount, String debitCardNumber, int creditCardNumber) {
   var transferPage = dashboardPage.selectCard(creditCardNumber);
   dashboardPage = transferPage.makeTransfer(amount, debitCardNumber);
  }
- @Тогда("баланс его {int} карты из списка на главной странице должен стать {int} рублей")
+ @Тогда("Тогда баланс его {int} карты из списка на главной странице должен стать {int} рублей")
  public void VerifyCreditBalance(int creditCardNumber, int expectedCreditBalance) {
  var actualCreditBalance = dashboardPage.getCardBalance(creditCardNumber);
  assertEquals(expectedCreditBalance,actualCreditBalance);
