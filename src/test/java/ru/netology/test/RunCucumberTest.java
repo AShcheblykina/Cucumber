@@ -1,3 +1,5 @@
+package ru.netology.test;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -6,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "summary"},
         features = {"src/test/resources/features"},
-        glue = {"ru.netology.transfer.steps"})
+        glue = {"ru.netology.steps"})
 public class RunCucumberTest {
+
 }

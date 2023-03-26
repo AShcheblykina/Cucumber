@@ -13,7 +13,7 @@ public class TransferPage {
     private final SelenideElement replenishment = $x("//h1");
 
     public TransferPage() {
-        transfer.shouldBe(visible);
+        replenishment.shouldBe(visible);
     }
 
     public DashboardPage makeTransfer(String amountToTransfer, String cardNumber) {
