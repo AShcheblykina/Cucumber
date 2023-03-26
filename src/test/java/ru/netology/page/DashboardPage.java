@@ -13,7 +13,7 @@ public class DashboardPage {
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
 
-    public void verifyIsDashboardPage() {
+    public void DashboardPage() {
         heading.shouldBe(visible);
     }
 
