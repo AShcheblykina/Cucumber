@@ -16,11 +16,11 @@ public class TemplateSteps {
 
  @Пусть("Пусть пользователь залогинен с именем {} и паролем {}")
   public void authorization(String login, String password) {
-  var loginPage = open("http://localhost:9999/", LoginPage.class);
+  var loginPage= open("http://localhost:9999/", LoginPage.class);
   var verificationPage = loginPage.validLogin(login,password);
   dashboardPage = verificationPage.validVerify(DataHelper.getVerificationCode());
  }
- @Когда("Когда он переводит {string} рублей с карты с номером {string} на свою {int} карту с главной страницы")
+ @Когда("Когда он переводит {} рублей с карты с номером {} на свою {} карту с главной страницы")
  public void makeTransfer(String amount, String debitCardNumber, int creditCardNumber) {
   var transferPage = dashboardPage.selectCard(creditCardNumber);
   dashboardPage = transferPage.makeTransfer(amount, debitCardNumber);
